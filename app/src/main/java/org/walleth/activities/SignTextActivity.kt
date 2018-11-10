@@ -13,6 +13,8 @@ import org.walleth.data.keystore.WallethKeyStore
 import org.walleth.data.networks.CurrentAddressProvider
 import org.walleth.khex.toHexString
 
+const val INTENT_EXTRA_TEXT = "TEXT"
+
 class SignTextActivity : BaseSubActivity() {
 
     private val keyStore: WallethKeyStore by inject()
@@ -22,7 +24,8 @@ class SignTextActivity : BaseSubActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_sign_text)
-        val text = intent.getStringExtra("TEXT")
+
+        val text = intent.getStringExtra(INTENT_EXTRA_TEXT)
 
         textToSign.text = text
 
